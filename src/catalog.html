@@ -25,31 +25,81 @@
         <div class="header-inner">
             <div class="logo-container">
                 <img src="../assets/logo.png" class="logo" alt="Logo da Empresa" />
-                <span class="logo-text">Sistemas de Vedação</span>
+                <span class="logo-text"
+                      data-i18n
+                      data-i18n-pt="Sistemas de Vedação"
+                      data-i18n-en="Sealing Systems"
+                      data-i18n-es="Sistemas de Sellado">
+                    Sistemas de Vedação
+                </span>
             </div>
 
-            <nav class="menu" aria-label="Navegação principal">
-                <a href="sobre.html" class="nav-link">Sobre</a>
-                <a href="/src/" class="nav-link">Produtos</a>
-                <a href="catalog.html" class="nav-link active">Catálogo</a>
-                <a href="imprensa.html" class="nav-link">Imprensa</a>
-                <a href="contato.html" class="nav-link">Contato</a>
+            <nav class="menu"
+                 aria-label="Navegação principal"
+                 data-i18n-aria-label
+                 data-i18n-aria-label-pt="Navegação principal"
+                 data-i18n-aria-label-en="Main navigation"
+                 data-i18n-aria-label-es="Navegación principal">
+                <a href="sobre.html" class="nav-link"
+                   data-i18n
+                   data-i18n-pt="Sobre"
+                   data-i18n-en="About"
+                   data-i18n-es="Nosotros">
+                    Sobre
+                </a>
+                <a href="../src/" class="nav-link"
+                   data-i18n
+                   data-i18n-pt="Produtos"
+                   data-i18n-en="Products"
+                   data-i18n-es="Productos">
+                    Produtos
+                </a>
+                <a href="catalog.html" class="nav-link active"
+                   data-i18n
+                   data-i18n-pt="Catálogo"
+                   data-i18n-en="Catalog"
+                   data-i18n-es="Catálogo">
+                    Catálogo
+                </a>
+                <a href="imprensa.html" class="nav-link"
+                   data-i18n
+                   data-i18n-pt="Imprensa"
+                   data-i18n-en="Press"
+                   data-i18n-es="Prensa">
+                    Imprensa
+                </a>
+                <a href="contato.html" class="nav-link"
+                   data-i18n
+                   data-i18n-pt="Contato"
+                   data-i18n-en="Contact"
+                   data-i18n-es="Contacto">
+                    Contato
+                </a>
             </nav>
 
-            <div class="controls" role="group" aria-label="Controles do sistema">
+            <div class="controls" role="group"
+                 aria-label="Controles do sistema"
+                 data-i18n-aria-label
+                 data-i18n-aria-label-pt="Controles do sistema"
+                 data-i18n-aria-label-en="System controls"
+                 data-i18n-aria-label-es="Controles del sistema">
                 <div class="controls-group">
-                    <button id="searchToggle" class="icon-btn" title="Buscar produtos">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-
                     <div class="flags-container">
                         <button id="flagToggle" class="flag-btn" aria-haspopup="true" aria-expanded="false"
-                            title="Selecionar idioma">
+                            title="Selecionar idioma"
+                            data-i18n-title
+                            data-i18n-title-pt="Selecionar idioma"
+                            data-i18n-title-en="Select language"
+                            data-i18n-title-es="Seleccionar idioma">
                             <span class="flag-icon flag-icon-br"></span>
                             <i class="fa-solid fa-chevron-down"></i>
                         </button>
 
                         <div id="flagMenu" class="flag-dropdown hidden" role="menu" aria-hidden="true">
+                            <button class="flag-option" data-lang="pt" aria-label="Português">
+                                <span class="flag-icon flag-icon-br"></span>
+                                Português
+                            </button>
                             <button class="flag-option" data-lang="en" aria-label="English">
                                 <span class="flag-icon flag-icon-us"></span>
                                 English
@@ -62,7 +112,16 @@
                     </div>
 
                     <button id="darkModeToggle" class="icon-btn" aria-pressed="false"
-                        title="Alternar modo escuro/claro">
+                        title="Alternar modo escuro/claro"
+                        data-i18n-title
+                        data-i18n-title-pt="Alternar modo escuro/claro"
+                        data-i18n-title-en="Toggle dark/light mode"
+                        data-i18n-title-es="Alternar modo oscuro/claro"
+                        data-i18n-aria-label
+                        data-i18n-aria-label-pt="Alternar modo escuro/claro"
+                        data-i18n-aria-label-en="Toggle dark/light mode"
+                        data-i18n-aria-label-es="Alternar modo oscuro/claro"
+                        aria-label="Alternar modo escuro/claro">
                         <i class="fa-solid fa-moon"></i>
                     </button>
                 </div>
@@ -75,12 +134,23 @@
             <!-- Seção de Introdução do Catálogo -->
             <section class="catalog-hero">
                 <div class="hero-content">
-                    <h1 class="catalog-title">Catálogo</h1>
+                    <h1 class="catalog-title"
+                        data-i18n
+                        data-i18n-pt="Catálogo"
+                        data-i18n-en="Catalog"
+                        data-i18n-es="Catálogo">
+                        Catálogo
+                    </h1>
                     <div class="title-underline"></div>
 
                     <div class="catalog-description">
-                        <p>Nosso catálogo visualmente contém todos nossos produtos disponíveis com descrição e fotos das
-                            peças. Faça o download ou acesse nosso catálogo web.</p>
+                        <p data-i18n
+                           data-i18n-pt="Nosso catálogo visual contém todos nossos produtos disponíveis com descrição e fotos das peças. Faça o download ou acesse nosso catálogo web."
+                           data-i18n-en="Our visual catalog contains all our available products with descriptions and photos of the parts. Download it or access our web catalog."
+                           data-i18n-es="Nuestro catálogo visual contiene todos nuestros productos disponibles con descripciones y fotos de las piezas. Descárguelo o acceda a nuestro catálogo web.">
+                            Nosso catálogo visual contém todos nossos produtos disponíveis com descrição e fotos das
+                            peças. Faça o download ou acesse nosso catálogo web.
+                        </p>
                     </div>
 
                     <div class="catalog-actions">
@@ -89,11 +159,26 @@
                                 <i class="fa-solid fa-globe"></i>
                             </div>
                             <div class="action-content">
-                                <h3>Acesso Web</h3>
-                                <p>Navegue por todos os produtos online com busca avançada e filtros</p>
+                                <h3 data-i18n
+                                    data-i18n-pt="Acesso Web"
+                                    data-i18n-en="Web Access"
+                                    data-i18n-es="Acceso web">
+                                    Acesso Web
+                                </h3>
+                                <p data-i18n
+                                   data-i18n-pt="Navegue por todos os produtos online com busca avançada e filtros"
+                                   data-i18n-en="Browse all products online with advanced search and filters"
+                                   data-i18n-es="Navegue por todos los productos en línea con búsqueda avanzada y filtros">
+                                    Navegue por todos os produtos online com busca avançada e filtros
+                                </p>
                                 <div class="action-link">
                                     <a href="https://www.titles.com/legis1" target="_blank" class="link-with-icon">
-                                        <span>www.titles.com/legis1</span>
+                                        <span data-i18n
+                                              data-i18n-pt="www.titles.com/legis1"
+                                              data-i18n-en="www.titles.com/legis1"
+                                              data-i18n-es="www.titles.com/legis1">
+                                            www.titles.com/legis1
+                                        </span>
                                         <i class="fa-solid fa-external-link-alt"></i>
                                     </a>
                                 </div>
@@ -105,11 +190,26 @@
                                 <i class="fa-solid fa-download"></i>
                             </div>
                             <div class="action-content">
-                                <h3>Download PDF</h3>
-                                <p>Catálogo completo em PDF para consulta offline</p>
+                                <h3 data-i18n
+                                    data-i18n-pt="Download PDF"
+                                    data-i18n-en="Download PDF"
+                                    data-i18n-es="Descargar PDF">
+                                    Download PDF
+                                </h3>
+                                <p data-i18n
+                                   data-i18n-pt="Catálogo completo em PDF para consulta offline"
+                                   data-i18n-en="Full catalog in PDF for offline consultation"
+                                   data-i18n-es="Catálogo completo en PDF para consulta sin conexión">
+                                    Catálogo completo em PDF para consulta offline
+                                </p>
                                 <div class="action-link">
                                     <a href="https://www.titles.com/testel" target="_blank" class="link-with-icon">
-                                        <span>www.titles.com/testel</span>
+                                        <span data-i18n
+                                              data-i18n-pt="www.titles.com/testel"
+                                              data-i18n-en="www.titles.com/testel"
+                                              data-i18n-es="www.titles.com/testel">
+                                            www.titles.com/testel
+                                        </span>
                                         <i class="fa-solid fa-download"></i>
                                     </a>
                                 </div>
@@ -122,55 +222,160 @@
             <!-- Seção de Formatos do Catálogo -->
             <section class="catalog-formats">
                 <div class="section-header">
-                    <h2 class="section-title">Formatos Disponíveis</h2>
-                    <p class="section-subtitle">Escolha o formato que melhor atende suas necessidades</p>
+                    <h2 class="section-title"
+                        data-i18n
+                        data-i18n-pt="Formatos Disponíveis"
+                        data-i18n-en="Available Formats"
+                        data-i18n-es="Formatos disponibles">
+                        Formatos Disponíveis
+                    </h2>
+                    <p class="section-subtitle"
+                       data-i18n
+                       data-i18n-pt="Escolha o formato que melhor atende suas necessidades"
+                       data-i18n-en="Choose the format that best fits your needs"
+                       data-i18n-es="Elija el formato que mejor se adapte a sus necesidades">
+                        Escolha o formato que melhor atende suas necessidades
+                    </p>
                 </div>
 
                 <div class="formats-grid">
                     <div class="format-card">
                         <div class="format-header">
-                            <div class="format-badge digital">Digital</div>
+                            <div class="format-badge digital"
+                                 data-i18n
+                                 data-i18n-pt="Digital"
+                                 data-i18n-en="Digital"
+                                 data-i18n-es="Digital">
+                                Digital
+                            </div>
                             <i class="format-icon fa-solid fa-laptop"></i>
                         </div>
                         <div class="format-body">
-                            <h3>Catálogo Web</h3>
+                            <h3 data-i18n
+                                data-i18n-pt="Catálogo Web"
+                                data-i18n-en="Web Catalog"
+                                data-i18n-es="Catálogo web">
+                                Catálogo Web
+                            </h3>
                             <ul class="format-features">
-                                <li><i class="fa-solid fa-check"></i> Busca em tempo real</li>
-                                <li><i class="fa-solid fa-check"></i> Filtros avançados</li>
-                                <li><i class="fa-solid fa-check"></i> Atualizações automáticas</li>
-                                <li><i class="fa-solid fa-check"></i> Acesso de qualquer dispositivo</li>
+                                <li data-i18n
+                                    data-i18n-pt="<i class='fa-solid fa-check'></i> Busca em tempo real"
+                                    data-i18n-en="<i class='fa-solid fa-check'></i> Real-time search"
+                                    data-i18n-es="<i class='fa-solid fa-check'></i> Búsqueda en tiempo real">
+                                    <i class="fa-solid fa-check"></i> Busca em tempo real
+                                </li>
+                                <li data-i18n
+                                    data-i18n-pt="<i class='fa-solid fa-check'></i> Filtros avançados"
+                                    data-i18n-en="<i class='fa-solid fa-check'></i> Advanced filters"
+                                    data-i18n-es="<i class='fa-solid fa-check'></i> Filtros avanzados">
+                                    <i class="fa-solid fa-check"></i> Filtros avançados
+                                </li>
+                                <li data-i18n
+                                    data-i18n-pt="<i class='fa-solid fa-check'></i> Atualizações automáticas"
+                                    data-i18n-en="<i class='fa-solid fa-check'></i> Automatic updates"
+                                    data-i18n-es="<i class='fa-solid fa-check'></i> Actualizaciones automáticas">
+                                    <i class="fa-solid fa-check"></i> Atualizações automáticas
+                                </li>
+                                <li data-i18n
+                                    data-i18n-pt="<i class='fa-solid fa-check'></i> Acesso de qualquer dispositivo"
+                                    data-i18n-en="<i class='fa-solid fa-check'></i> Access from any device"
+                                    data-i18n-es="<i class='fa-solid fa-check'></i> Acceso desde cualquier dispositivo">
+                                    <i class="fa-solid fa-check"></i> Acesso de qualquer dispositivo
+                                </li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="format-card">
                         <div class="format-header">
-                            <div class="format-badge pdf">PDF</div>
+                            <div class="format-badge pdf"
+                                 data-i18n
+                                 data-i18n-pt="PDF"
+                                 data-i18n-en="PDF"
+                                 data-i18n-es="PDF">
+                                PDF
+                            </div>
                             <i class="format-icon fa-solid fa-file-pdf"></i>
                         </div>
                         <div class="format-body">
-                            <h3>Download Completo</h3>
+                            <h3 data-i18n
+                                data-i18n-pt="Download Completo"
+                                data-i18n-en="Full Download"
+                                data-i18n-es="Descarga completa">
+                                Download Completo
+                            </h3>
                             <ul class="format-features">
-                                <li><i class="fa-solid fa-check"></i> Consulta offline</li>
-                                <li><i class="fa-solid fa-check"></i> 500+ páginas</li>
-                                <li><i class="fa-solid fa-check"></i> Índice detalhado</li>
-                                <li><i class="fa-solid fa-check"></i> Especificações técnicas</li>
+                                <li data-i18n
+                                    data-i18n-pt="<i class='fa-solid fa-check'></i> Consulta offline"
+                                    data-i18n-en="<i class='fa-solid fa-check'></i> Offline viewing"
+                                    data-i18n-es="<i class='fa-solid fa-check'></i> Consulta sin conexión">
+                                    <i class="fa-solid fa-check"></i> Consulta offline
+                                </li>
+                                <li data-i18n
+                                    data-i18n-pt="<i class='fa-solid fa-check'></i> 500+ páginas"
+                                    data-i18n-en="<i class='fa-solid fa-check'></i> 500+ pages"
+                                    data-i18n-es="<i class='fa-solid fa-check'></i> 500+ páginas">
+                                    <i class="fa-solid fa-check"></i> 500+ páginas
+                                </li>
+                                <li data-i18n
+                                    data-i18n-pt="<i class='fa-solid fa-check'></i> Índice detalhado"
+                                    data-i18n-en="<i class='fa-solid fa-check'></i> Detailed index"
+                                    data-i18n-es="<i class='fa-solid fa-check'></i> Índice detallado">
+                                    <i class="fa-solid fa-check"></i> Índice detalhado
+                                </li>
+                                <li data-i18n
+                                    data-i18n-pt="<i class='fa-solid fa-check'></i> Especificações técnicas"
+                                    data-i18n-en="<i class='fa-solid fa-check'></i> Technical specifications"
+                                    data-i18n-es="<i class='fa-solid fa-check'></i> Especificaciones técnicas">
+                                    <i class="fa-solid fa-check"></i> Especificações técnicas
+                                </li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="format-card">
                         <div class="format-header">
-                            <div class="format-badge print">Impresso</div>
+                            <div class="format-badge print"
+                                 data-i18n
+                                 data-i18n-pt="Impresso"
+                                 data-i18n-en="Printed"
+                                 data-i18n-es="Impreso">
+                                Impresso
+                            </div>
                             <i class="format-icon fa-solid fa-book"></i>
                         </div>
                         <div class="format-body">
-                            <h3>Versão Impressa</h3>
+                            <h3 data-i18n
+                                data-i18n-pt="Versão Impressa"
+                                data-i18n-en="Printed Version"
+                                data-i18n-es="Versión impresa">
+                                Versão Impressa
+                            </h3>
                             <ul class="format-features">
-                                <li><i class="fa-solid fa-check"></i> Entrega física</li>
-                                <li><i class="fa-solid fa-check"></i> Encadernação profissional</li>
-                                <li><i class="fa-solid fa-check"></i> Papel de alta qualidade</li>
-                                <li><i class="fa-solid fa-check"></i> Solicite seu exemplar</li>
+                                <li data-i18n
+                                    data-i18n-pt="<i class='fa-solid fa-check'></i> Entrega física"
+                                    data-i18n-en="<i class='fa-solid fa-check'></i> Physical delivery"
+                                    data-i18n-es="<i class='fa-solid fa-check'></i> Entrega física">
+                                    <i class="fa-solid fa-check"></i> Entrega física
+                                </li>
+                                <li data-i18n
+                                    data-i18n-pt="<i class='fa-solid fa-check'></i> Encadernação profissional"
+                                    data-i18n-en="<i class='fa-solid fa-check'></i> Professional binding"
+                                    data-i18n-es="<i class='fa-solid fa-check'></i> Encuadernación profesional">
+                                    <i class="fa-solid fa-check"></i> Encadernação profissional
+                                </li>
+                                <li data-i18n
+                                    data-i18n-pt="<i class='fa-solid fa-check'></i> Papel de alta qualidade"
+                                    data-i18n-en="<i class='fa-solid fa-check'></i> High-quality paper"
+                                    data-i18n-es="<i class='fa-solid fa-check'></i> Papel de alta calidad">
+                                    <i class="fa-solid fa-check"></i> Papel de alta qualidade
+                                </li>
+                                <li data-i18n
+                                    data-i18n-pt="<i class='fa-solid fa-check'></i> Solicite seu exemplar"
+                                    data-i18n-en="<i class='fa-solid fa-check'></i> Request your copy"
+                                    data-i18n-es="<i class='fa-solid fa-check'></i> Solicite su ejemplar">
+                                    <i class="fa-solid fa-check"></i> Solicite seu exemplar
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -180,8 +385,20 @@
             <!-- Seção de Produtos em Destaque -->
             <section class="featured-products">
                 <div class="section-header">
-                    <h2 class="section-title">Produtos em Destaque</h2>
-                    <p class="section-subtitle">Conheça alguns dos nossos principais produtos</p>
+                    <h2 class="section-title"
+                        data-i18n
+                        data-i18n-pt="Produtos em Destaque"
+                        data-i18n-en="Featured Products"
+                        data-i18n-es="Productos destacados">
+                        Produtos em Destaque
+                    </h2>
+                    <p class="section-subtitle"
+                       data-i18n
+                       data-i18n-pt="Conheça alguns dos nossos principais produtos"
+                       data-i18n-en="Discover some of our main products"
+                       data-i18n-es="Conozca algunos de nuestros principales productos">
+                        Conheça alguns dos nossos principais produtos
+                    </p>
                 </div>
 
                 <div class="products-grid">
@@ -190,10 +407,27 @@
                             <img src="../assets/D229.png" alt="Junta do Cabeçote D229">
                         </div>
                         <div class="product-info">
-                            <span class="product-category">Junta do Cabeçote</span>
+                            <span class="product-category"
+                                  data-i18n
+                                  data-i18n-pt="Junta do Cabeçote"
+                                  data-i18n-en="Cylinder Head Gasket"
+                                  data-i18n-es="Junta de culata">
+                                Junta do Cabeçote
+                            </span>
                             <h3>D229</h3>
-                            <p>Vedação premium para motores diesel com alta resistência térmica</p>
-                            <a href="../index.html" class="btn btn-outline">Ver Detalhes</a>
+                            <p data-i18n
+                               data-i18n-pt="Vedação premium para motores diesel com alta resistência térmica"
+                               data-i18n-en="Premium sealing for diesel engines with high thermal resistance"
+                               data-i18n-es="Sellado premium para motores diésel con alta resistencia térmica">
+                                Vedação premium para motores diesel com alta resistência térmica
+                            </p>
+                            <a href="../index.html" class="btn btn-outline"
+                               data-i18n
+                               data-i18n-pt="Ver Detalhes"
+                               data-i18n-en="View details"
+                               data-i18n-es="Ver detalles">
+                                Ver Detalhes
+                            </a>
                         </div>
                     </div>
 
@@ -202,10 +436,27 @@
                             <img src="../assets/VEDADOR_X12.png" alt="Vedador X12">
                         </div>
                         <div class="product-info">
-                            <span class="product-category">Vedador Especial</span>
+                            <span class="product-category"
+                                  data-i18n
+                                  data-i18n-pt="Vedador Especial"
+                                  data-i18n-en="Special Seal"
+                                  data-i18n-es="Sellador especial">
+                                Vedador Especial
+                            </span>
                             <h3>X12</h3>
-                            <p>Projetado para alta temperatura e pressão em aplicações industriais</p>
-                            <a href="../index.html" class="btn btn-outline">Ver Detalhes</a>
+                            <p data-i18n
+                               data-i18n-pt="Projetado para alta temperatura e pressão em aplicações industriais"
+                               data-i18n-en="Designed for high temperature and pressure in industrial applications"
+                               data-i18n-es="Diseñado para alta temperatura y presión en aplicaciones industriales">
+                                Projetado para alta temperatura e pressão em aplicações industriais
+                            </p>
+                            <a href="../index.html" class="btn btn-outline"
+                               data-i18n
+                               data-i18n-pt="Ver Detalhes"
+                               data-i18n-en="View details"
+                               data-i18n-es="Ver detalles">
+                                Ver Detalhes
+                            </a>
                         </div>
                     </div>
 
@@ -214,10 +465,27 @@
                             <img src="../assets/x10.png" alt="Vedador X10">
                         </div>
                         <div class="product-info">
-                            <span class="product-category">Vedador Compacto</span>
+                            <span class="product-category"
+                                  data-i18n
+                                  data-i18n-pt="Vedador Compacto"
+                                  data-i18n-en="Compact Seal"
+                                  data-i18n-es="Sellador compacto">
+                                Vedador Compacto
+                            </span>
                             <h3>X10</h3>
-                            <p>Solução econômica para espaços limitados sem comprometer a qualidade</p>
-                            <a href="../index.html" class="btn btn-outline">Ver Detalhes</a>
+                            <p data-i18n
+                               data-i18n-pt="Solução econômica para espaços limitados sem comprometer a qualidade"
+                               data-i18n-en="Cost-effective solution for limited spaces without compromising quality"
+                               data-i18n-es="Solución económica para espacios reducidos sin comprometer la calidad">
+                                Solução econômica para espaços limitados sem comprometer a qualidade
+                            </p>
+                            <a href="../index.html" class="btn btn-outline"
+                               data-i18n
+                               data-i18n-pt="Ver Detalhes"
+                               data-i18n-en="View details"
+                               data-i18n-es="Ver detalles">
+                                Ver Detalhes
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -227,30 +495,60 @@
             <section class="catalog-help">
                 <div class="help-container">
                     <div class="help-content">
-                        <h2>Precisa de Ajuda?</h2>
-                        <p>Nossa equipe técnica está disponível para auxiliar na escolha do produto ideal para sua
-                            aplicação.</p>
+                        <h2 data-i18n
+                            data-i18n-pt="Precisa de Ajuda?"
+                            data-i18n-en="Need Help?"
+                            data-i18n-es="¿Necesita ayuda?">
+                            Precisa de Ajuda?
+                        </h2>
+                        <p data-i18n
+                           data-i18n-pt="Nossa equipe técnica está disponível para auxiliar na escolha do produto ideal para sua aplicação."
+                           data-i18n-en="Our technical team is available to help you choose the ideal product for your application."
+                           data-i18n-es="Nuestro equipo técnico está disponible para ayudarle a elegir el producto ideal para su aplicación.">
+                            Nossa equipe técnica está disponível para auxiliar na escolha do produto ideal para sua
+                            aplicação.
+                        </p>
 
                         <div class="help-contacts">
                             <div class="contact-item">
                                 <i class="fa-solid fa-phone"></i>
                                 <div>
-                                    <h4>Telefone</h4>
+                                    <h4 data-i18n
+                                        data-i18n-pt="Telefone"
+                                        data-i18n-en="Phone"
+                                        data-i18n-es="Teléfono">
+                                        Telefone
+                                    </h4>
                                     <p>(11) 99999-9999</p>
                                 </div>
                             </div>
                             <div class="contact-item">
                                 <i class="fa-solid fa-envelope"></i>
                                 <div>
-                                    <h4>E-mail</h4>
+                                    <h4 data-i18n
+                                        data-i18n-pt="E-mail"
+                                        data-i18n-en="E-mail"
+                                        data-i18n-es="Correo electrónico">
+                                        E-mail
+                                    </h4>
                                     <p>catalogo@empresa.com</p>
                                 </div>
                             </div>
                             <div class="contact-item">
                                 <i class="fa-solid fa-clock"></i>
                                 <div>
-                                    <h4>Horário</h4>
-                                    <p>Seg-Sex: 8h-18h</p>
+                                    <h4 data-i18n
+                                        data-i18n-pt="Horário"
+                                        data-i18n-en="Opening hours"
+                                        data-i18n-es="Horario">
+                                        Horário
+                                    </h4>
+                                    <p data-i18n
+                                       data-i18n-pt="Seg-Sex: 8h-18h"
+                                       data-i18n-en="Mon–Fri: 8am–6pm"
+                                       data-i18n-es="Lun–Vie: 8h–18h">
+                                        Seg-Sex: 8h-18h
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -269,43 +567,158 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Catálogo</h3>
+                <h3 data-i18n
+                    data-i18n-pt="Catálogo"
+                    data-i18n-en="Catalog"
+                    data-i18n-es="Catálogo">
+                    Catálogo
+                </h3>
                 <ul>
-                    <li><a href="#">Produtos</a></li>
-                    <li><a href="#">Especificações</a></li>
-                    <li><a href="#">Downloads</a></li>
-                    <li><a href="#">Aplicações</a></li>
+                    <li><a href="#"
+                           data-i18n
+                           data-i18n-pt="Produtos"
+                           data-i18n-en="Products"
+                           data-i18n-es="Productos">
+                        Produtos
+                    </a></li>
+                    <li><a href="#"
+                           data-i18n
+                           data-i18n-pt="Especificações"
+                           data-i18n-en="Specifications"
+                           data-i18n-es="Especificaciones">
+                        Especificações
+                    </a></li>
+                    <li><a href="#"
+                           data-i18n
+                           data-i18n-pt="Downloads"
+                           data-i18n-en="Downloads"
+                           data-i18n-es="Descargas">
+                        Downloads
+                    </a></li>
+                    <li><a href="#"
+                           data-i18n
+                           data-i18n-pt="Aplicações"
+                           data-i18n-en="Applications"
+                           data-i18n-es="Aplicaciones">
+                        Aplicações
+                    </a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Empresa</h3>
+                <h3 data-i18n
+                    data-i18n-pt="Empresa"
+                    data-i18n-en="Company"
+                    data-i18n-es="Empresa">
+                    Empresa
+                </h3>
                 <ul>
-                    <li><a href="sobre.html">Sobre Nós</a></li>
-                    <li><a href="#">Contato</a></li>
-                    <li><a href="#">Trabalhe Conosco</a></li>
-                    <li><a href="#">Imprensa</a></li>
+                    <li><a href="sobre.html"
+                           data-i18n
+                           data-i18n-pt="Sobre Nós"
+                           data-i18n-en="About Us"
+                           data-i18n-es="Sobre nosotros">
+                        Sobre Nós
+                    </a></li>
+                    <li><a href="#"
+                           data-i18n
+                           data-i18n-pt="Contato"
+                           data-i18n-en="Contact"
+                           data-i18n-es="Contacto">
+                        Contato
+                    </a></li>
+                    <li><a href="#"
+                           data-i18n
+                           data-i18n-pt="Trabalhe Conosco"
+                           data-i18n-en="Work With Us"
+                           data-i18n-es="Trabaje con nosotros">
+                        Trabalhe Conosco
+                    </a></li>
+                    <li><a href="#"
+                           data-i18n
+                           data-i18n-pt="Imprensa"
+                           data-i18n-en="Press"
+                           data-i18n-es="Prensa">
+                        Imprensa
+                    </a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Suporte</h3>
+                <h3 data-i18n
+                    data-i18n-pt="Suporte"
+                    data-i18n-en="Support"
+                    data-i18n-es="Soporte">
+                    Suporte
+                </h3>
                 <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Manuais</a></li>
-                    <li><a href="#">Assistência Técnica</a></li>
-                    <li><a href="#">Garantia</a></li>
+                    <li><a href="#"
+                           data-i18n
+                           data-i18n-pt="FAQ"
+                           data-i18n-en="FAQ"
+                           data-i18n-es="FAQ">
+                        FAQ
+                    </a></li>
+                    <li><a href="#"
+                           data-i18n
+                           data-i18n-pt="Manuais"
+                           data-i18n-en="Manuals"
+                           data-i18n-es="Manuales">
+                        Manuais
+                    </a></li>
+                    <li><a href="#"
+                           data-i18n
+                           data-i18n-pt="Assistência Técnica"
+                           data-i18n-en="Technical Support"
+                           data-i18n-es="Asistencia técnica">
+                        Assistência Técnica
+                    </a></li>
+                    <li><a href="#"
+                           data-i18n
+                           data-i18n-pt="Garantia"
+                           data-i18n-en="Warranty"
+                           data-i18n-es="Garantía">
+                        Garantia
+                    </a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Legal</h3>
+                <h3 data-i18n
+                    data-i18n-pt="Legal"
+                    data-i18n-en="Legal"
+                    data-i18n-es="Legal">
+                    Legal
+                </h3>
                 <ul>
-                    <li><a href="#">Termos de Uso</a></li>
-                    <li><a href="#">Política de Privacidade</a></li>
-                    <li><a href="#">Cookies</a></li>
+                    <li><a href="#"
+                           data-i18n
+                           data-i18n-pt="Termos de Uso"
+                           data-i18n-en="Terms of Use"
+                           data-i18n-es="Términos de uso">
+                        Termos de Uso
+                    </a></li>
+                    <li><a href="#"
+                           data-i18n
+                           data-i18n-pt="Política de Privacidade"
+                           data-i18n-en="Privacy Policy"
+                           data-i18n-es="Política de privacidad">
+                        Política de Privacidade
+                    </a></li>
+                    <li><a href="#"
+                           data-i18n
+                           data-i18n-pt="Cookies"
+                           data-i18n-en="Cookies"
+                           data-i18n-es="Cookies">
+                        Cookies
+                    </a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Empresa de Sistemas de Vedação. Todos os direitos reservados.</p>
+            <p data-i18n
+               data-i18n-pt="© 2024 Empresa de Sistemas de Vedação. Todos os direitos reservados."
+               data-i18n-en="© 2024 Sealing Systems Company. All rights reserved."
+               data-i18n-es="© 2024 Empresa de Sistemas de Sellado. Todos los derechos reservados.">
+                © 2024 Empresa de Sistemas de Vedação. Todos os direitos reservados.
+            </p>
         </div>
     </footer>
 

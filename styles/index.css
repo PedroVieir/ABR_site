@@ -801,7 +801,21 @@ svg {
 body.dark-mode {
     background: var(--dark-bg-primary);
     color: var(--dark-text-primary);
+
+    /* Remapeia os tokens neutros para a paleta escura */
+    --bg-light: var(--dark-bg-primary);
+    --bg-white: var(--dark-bg-secondary);
+
+    --text-primary: var(--dark-text-primary);
+    --text-secondary: var(--dark-text-secondary);
+    --text-muted: var(--dark-text-muted);
+
+    --border-light: var(--dark-border-light);
+    --border-medium: var(--dark-border);
 }
+
+
+
 
 /* Header Noturno */
 body.dark-mode .header {
@@ -821,7 +835,7 @@ body.dark-mode .nav-link {
 }
 
 body.dark-mode .nav-link:hover {
-    background: rgba(77, 166, 255, 0.1);
+    background: rgba(228, 228, 228, 0.1);
     color: var(--dark-primary);
 }
 
@@ -1062,13 +1076,13 @@ body.dark-mode .indicator-value {
     color: var(--dark-primary);
 }
 
-/* Utilitários de modo escuro */
+/* Utilitários de modo claro/escuro */
 .dark-mode-only {
     display: none;
 }
 
 .light-mode-only {
-    display: none;
+    display: block;
 }
 
 body.dark-mode .dark-mode-only {
@@ -1076,8 +1090,9 @@ body.dark-mode .dark-mode-only {
 }
 
 body.dark-mode .light-mode-only {
-    display: block;
+    display: none;
 }
+
 
 /* Estados de foco */
 body.dark-mode *:focus {
