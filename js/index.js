@@ -497,12 +497,20 @@ class LanguageManager {
   constructor() {
     this.flagToggle = document.getElementById('flagToggle');
     this.flagMenu = document.getElementById('flagMenu');
+
+    // idiomas que você suporta
+    this.supportedLanguages = ['pt', 'en', 'es'];
+    this.currentLanguage = 'pt';
+
+    
+
     this.init();
   }
 
   init() {
     this.setupEventListeners();
-    this.loadSavedLanguage();
+    this.loadSavedLanguage();         // define this.currentLanguage
+    this.applyLanguage(this.currentLanguage); // aplica textos na página
   }
 
   setupEventListeners() {
@@ -530,32 +538,56 @@ class LanguageManager {
   }
 
   selectLanguage(button) {
-    const lang = button.dataset.lang;
+    const lang = button.dataset.lang || 'pt';
     const langText = button.textContent.trim();
 
-    // Atualizar botão
-    this.flagToggle.innerHTML = `
-      <span class="flag-icon flag-icon-${lang === 'en' ? 'us' : lang}"></span>
-      ${langText.split(' ')[0]}
-      <i class="fa-solid fa-chevron-down"></i>
-    `;
+    this.currentLanguage = lang;
+
+    // Atualizar botão de bandeira
+    this.updateFlagButton(lang, langText);
 
     // Fechar menu
     this.flagMenu.classList.add('hidden');
     this.flagToggle.setAttribute('aria-expanded', 'false');
     this.flagMenu.setAttribute('aria-hidden', 'true');
 
+    // Aplicar linguagem na página
+    this.applyLanguage(lang);
+
     // Feedback
-    this.showNotification(`Idioma alterado para ${langText}`);
+    this.showNotification(this.getLanguageChangeMessage(lang, langText));
 
     // Salvar preferência
     localStorage.setItem('language', lang);
   }
 
+  updateFlagButton(lang, langText) {
+  if (!this.flagToggle) return;
+
+  // Mapa correto: idioma → código de bandeira da flag-icon-css
+  const flagMap = {
+    pt: 'br', // português → Brasil
+    en: 'us', // inglês → EUA
+    es: 'es', // espanhol → Espanha (ou troca se quiser outro país)
+  };
+
+  const flagCode = flagMap[lang] || 'br'; // fallback pra BR se vier algo estranho
+  const shortLabel = (langText || '').trim().split(' ')[0];
+
+  this.flagToggle.innerHTML = `
+    <span class="flag-icon flag-icon-${flagCode}"></span>
+    ${shortLabel}
+    <i class="fa-solid fa-chevron-down"></i>
+  `;
+}
+
+
   closeFlagMenu(e) {
-    if (!this.flagMenu.classList.contains('hidden') &&
+    if (
+      !this.flagMenu.classList.contains('hidden') &&
       !this.flagToggle.contains(e.target) &&
-      !this.flagMenu.contains(e.target)) {
+      !this.flagMenu.contains(e.target)
+    ) {
       this.flagMenu.classList.add('hidden');
       this.flagToggle.setAttribute('aria-expanded', 'false');
       this.flagMenu.setAttribute('aria-hidden', 'true');
@@ -563,31 +595,99 @@ class LanguageManager {
   }
 
   loadSavedLanguage() {
-    const savedLanguage = localStorage.getItem('language');
-    if (savedLanguage) {
-      const flagOption = document.querySelector(`[data-lang="${savedLanguage}"]`);
-      if (flagOption) {
-        this.selectLanguage(flagOption);
+  const savedLanguage = localStorage.getItem('language');
+
+  if (savedLanguage && this.supportedLanguages.includes(savedLanguage)) {
+    this.currentLanguage = savedLanguage;
+  } else {
+    this.currentLanguage = 'pt';
+  }
+
+  const flagOption = document.querySelector(
+    `[data-lang="${this.currentLanguage}"]`
+  );
+
+  if (flagOption) {
+    const langText = flagOption.textContent.trim();
+    this.updateFlagButton(this.currentLanguage, langText);
+  } else {
+    // fallback hardcoded se der ruim
+    this.updateFlagButton('pt', 'Português');
+  }
+}
+
+
+  applyLanguage(lang) {
+    // <html lang="pt">
+    document.documentElement.setAttribute('lang', lang);
+
+    // Textos/HTML: elementos com data-i18n + data-i18n-pt / data-i18n-en / etc.
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const attrName = `data-i18n-${lang}`;
+      const translation = el.getAttribute(attrName);
+
+      if (!translation) return;
+
+      const tag = el.tagName.toLowerCase();
+
+      if (tag === 'input' || tag === 'textarea') {
+        // placeholder ou valor
+        if (el.hasAttribute('placeholder')) {
+          el.placeholder = translation;
+        } else {
+          el.value = translation;
+        }
+      } else {
+        el.innerHTML = translation;
       }
-    }
+    });
+
+    // title: elementos com data-i18n-title / data-i18n-title-pt / data-i18n-title-en
+    document.querySelectorAll('[data-i18n-title]').forEach((el) => {
+      const attrName = `data-i18n-title-${lang}`;
+      const translation = el.getAttribute(attrName);
+      if (translation) el.title = translation;
+    });
+
+    // aria-label: elementos com data-i18n-aria-label / data-i18n-aria-label-pt / etc.
+    document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
+      const attrName = `data-i18n-aria-label-${lang}`;
+      const translation = el.getAttribute(attrName);
+      if (translation) el.setAttribute('aria-label', translation);
+    });
+  }
+
+  getLanguageChangeMessage(lang, langText) {
+    const map = {
+      pt: `Idioma alterado para ${langText}`,
+      en: `Language changed to ${langText}`,
+      es: `Idioma cambiado a ${langText}`,
+    };
+    return map[lang] || map.pt;
   }
 
   showNotification(message) {
     const notification = document.createElement('div');
     notification.className = 'notification';
     notification.textContent = message;
+
+    const isDark =
+      typeof themeManager !== 'undefined' &&
+      themeManager.getCurrentTheme &&
+      themeManager.getCurrentTheme() === 'dark';
+
     notification.style.cssText = `
       position: fixed;
       top: 100px;
       right: 32px;
-      background: ${themeManager.getCurrentTheme() === 'dark' ? 'var(--dark-surface)' : 'var(--primary)'};
-      color: ${themeManager.getCurrentTheme() === 'dark' ? 'var(--dark-text-primary)' : 'white'};
+      background: ${isDark ? 'var(--dark-surface)' : 'var(--primary)'};
+      color: ${isDark ? 'var(--dark-text-primary)' : 'white'};
       padding: 16px 24px;
       border-radius: var(--radius-lg);
-      box-shadow: ${themeManager.getCurrentTheme() === 'dark' ? 'var(--dark-shadow-lg)' : 'var(--shadow-lg)'};
+      box-shadow: ${isDark ? 'var(--dark-shadow-lg)' : 'var(--shadow-lg)'};
       z-index: 2000;
       animation: slideInRight 0.3s ease-out;
-      border: 1px solid ${themeManager.getCurrentTheme() === 'dark' ? 'var(--dark-border)' : 'transparent'};
+      border: 1px solid ${isDark ? 'var(--dark-border)' : 'transparent'};
     `;
 
     document.body.appendChild(notification);
@@ -598,6 +698,7 @@ class LanguageManager {
     }, 3000);
   }
 }
+
 
 // ====================
 // SISTEMA DE BUSCA
