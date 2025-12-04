@@ -519,13 +519,16 @@ class LanguageManager {
       this.toggleFlagMenu();
     });
 
-    document.querySelectorAll('.flag-option').forEach(btn => {
-      btn.addEventListener('click', () => {
-        this.selectLanguage(btn);
-      });
-    });
-
+    // Usar delegação de eventos para .flag-option — mais robusto caso o DOM mude
     document.addEventListener('click', (e) => {
+      const opt = e.target.closest && e.target.closest('.flag-option');
+      if (opt) {
+        e.stopPropagation();
+        this.selectLanguage(opt);
+        return;
+      }
+
+      // fechamento do menu ao clicar fora
       this.closeFlagMenu(e);
     });
   }
@@ -1424,19 +1427,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inicializar navegação
   const navigationManager = new NavigationManager();
   const currentPage = navigationManager.getCurrentPage();
+  // Inicializar recursos específicos por página
+  // Garantir LanguageManager em todas as páginas (replicar comportamento das páginas que funcionam)
+  if (!languageManager) {
+    languageManager = new LanguageManager();
+  }
 
   // Inicializar recursos específicos por página
   if (currentPage === 'index') {
     productManager = new ProductManager();
-    languageManager = new LanguageManager();
     searchManager = new SearchManager();
   } else if (currentPage === 'catalog') {
     const catalogFeatures = new CatalogFeatures();
-    languageManager = new LanguageManager();
     searchManager = new SearchManager();
   } else if (currentPage === 'sobre') {
     const aboutFeatures = new AboutFeatures();
-    languageManager = new LanguageManager();
   }
 
   // Inicializar sistema de busca global
