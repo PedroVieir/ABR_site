@@ -1,4 +1,8 @@
+
 {
+
+    "buildCommand": "npm run build",
+    
     "public": "src",
     "rewrites": [
         {
@@ -10,7 +14,7 @@
             "destination": "/contato.html"
         },
         {
-            "source": "/index",
+            "source": "/index", 
             "destination": "/index.html"
         },
         {
